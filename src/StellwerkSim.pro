@@ -12,9 +12,9 @@ TARGET = StellwerkSim
 TEMPLATE = app
 
 
-SOURCES += 	sources/main.cpp\
-			sources/mainwindow.cpp
+SOURCES +=  sources/main.cpp\
+            sources/StellwerkSim/mainwindow.cpp
 
-HEADERS  += sources/mainwindow.h
+HEADERS  += sources/StellwerkSim/mainwindow.h
 
-FORMS    += sources/mainwindow.ui
+FORMS    += sources/StellwerkSim/mainwindow.ui
