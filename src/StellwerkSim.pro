@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,8 +13,26 @@ TEMPLATE = app
 
 
 SOURCES +=  sources/main.cpp\
-            sources/StellwerkSim/mainwindow.cpp
+            sources/StellwerkSim/mainwindow.cpp \
+    sources/Painting/gleis.cpp \
+    sources/Painting/hauptsignal.cpp \
+    sources/Painting/weiche.cpp \
+    sources/Daten/stellwerkreader.cpp \
+    sources/Daten/stellwerkmodel.cpp \
+    sources/Painting/paintingelement.cpp \
+    sources/Daten/stellwerkelement.cpp \
+    sources/Painting/fahrplaneintrag.cpp \
+    sources/StellwerkSim/fahrplanwidget.cpp
 
-HEADERS  += sources/StellwerkSim/mainwindow.h
+HEADERS  += sources/StellwerkSim/mainwindow.h \
+    sources/Painting/gleis.h \
+    sources/Painting/hauptsignal.h \
+    sources/Painting/weiche.h \
+    sources/Daten/stellwerkreader.h \
+    sources/Daten/stellwerkmodel.h \
+    sources/Painting/paintingelement.h \
+    sources/Daten/stellwerkelement.h \
+    sources/Painting/fahrplaneintrag.h \
+    sources/StellwerkSim/fahrplanwidget.h
 
 FORMS    += sources/StellwerkSim/mainwindow.ui
