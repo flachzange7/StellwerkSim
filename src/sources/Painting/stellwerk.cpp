@@ -36,7 +36,7 @@ void Stellwerk::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     Q_UNUSED(widget);
 
     painter->drawRect(m_posX, m_posY, 100, 60);
-    painter->drawText(QRectF(m_posX+5, m_posY+5, 100, 60), m_name);
+    painter->drawText(QRectF(m_posX+5, m_posY+5, 90, 50), m_name);
     painter->drawLine(QPoint(m_posX, m_posY+45), QPoint(m_posX+100, m_posY+45));
     painter->drawLine(QPoint(m_posX+50, m_posY+45), QPoint(m_posX+50, m_posY+60));
 }

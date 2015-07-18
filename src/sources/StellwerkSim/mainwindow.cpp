@@ -11,30 +11,43 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     setupUi(this);
-    QGraphicsView *stellwerkübersicht = new QGraphicsView();
+    QGraphicsView *stellwerkuebersicht = new QGraphicsView();
 
     QGraphicsScene *scene = new QGraphicsScene();
     scene->setSceneRect(0, 0, size().width(), size().height());
+    Stellwerk *suessenbrunn = new Stellwerk("Wien Suessenbrunn", 900, 0);
+    Stellwerk *floridsdorf = new Stellwerk("Wien Floridsdorf", 800, 100);
+    Stellwerk *nord = new Stellwerk("Wien Nord", 800, 300);
+    Stellwerk *hbf = new Stellwerk("Wien Hauptbahnhof", 700, 500);
+    Stellwerk *zvb = new Stellwerk("Wien ZVB Kledering", 700, 600);
+    Stellwerk *meidling = new Stellwerk("Wien Meidling", 400, 500);
+    Stellwerk *liesing = new Stellwerk("Wien Liesing", 200, 500);
 
-    Stellwerk *floridsdorf = new Stellwerk("Wien Floridsdorf", 600, 100);
-    Stellwerk *nord = new Stellwerk("Wien Nord", 600, 300);
-    Stellwerk *hbf = new Stellwerk("Wien Hauptbahnhof", 500, 500);
-    Stellwerk *meidling = new Stellwerk("Wien Meidling", 300, 500);
-    Stellwerk *liesing = new Stellwerk("Wien Liesing", 100, 500);
+    Stellwerk *simmering = new Stellwerk("Wien Simmering", 910, 300);
+    Stellwerk *erzherzogkarlstrasse = new Stellwerk("Wien Erzherzog Karl Strasse", 910, 190);
 
-    Stellwerk *hütteldorf = new Stellwerk("Wien Hütteldorf", 150, 300);
-    Stellwerk *westbahnhof = new Stellwerk("Wien Westbahnhof", 350, 300);
+    Stellwerk *huetteldorf = new Stellwerk("Wien Huetteldorf", 50, 300);
+    Stellwerk *westbahnhof = new Stellwerk("Wien Westbahnhof", 250, 300);
+
+    Stellwerk *fjb = new Stellwerk("Wien Franz Josef Bahnhof", 500, 300);
+    Stellwerk *heiligenstadt = new Stellwerk("Wien Heiligenstadt", 500, 100);
 
     scene->addItem(meidling);
     scene->addItem(liesing);
-    scene->addItem(hütteldorf);
+    scene->addItem(huetteldorf);
     scene->addItem(westbahnhof);
+    scene->addItem(simmering);
+    scene->addItem(erzherzogkarlstrasse);
     scene->addItem(hbf);
+    scene->addItem(zvb);
     scene->addItem(nord);
     scene->addItem(floridsdorf);
+    scene->addItem(suessenbrunn);
+    scene->addItem(fjb);
+    scene->addItem(heiligenstadt);
 
-    stellwerkübersicht->setScene(scene);
-    setCentralWidget(stellwerkübersicht);
+    stellwerkuebersicht->setScene(scene);
+    setCentralWidget(stellwerkuebersicht);
 
 
     //initialisiereAlles();
