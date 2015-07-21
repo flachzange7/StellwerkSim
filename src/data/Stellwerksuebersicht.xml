@@ -1,3 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<?mso-application progid="Word.Document"?>
-<w:wordDocument xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" w:macrosPresent="no" w:embeddedObjPresent="no" w:ocxPresent="no" xml:space="preserve"><o:DocumentProperties></o:DocumentProperties><w:fonts><w:defaultFonts w:ascii="Times New Roman" w:fareast="Times New Roman" w:h-ansi="Times New Roman" w:cs="Times New Roman"/></w:fonts><w:docPr></w:docPr><w:body><wx:sect><w:p><w:pPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Helvetica" w:h-ansi="Helvetica" w:cs="Helvetica"/><wx:font wx:val="Helvetica"/><w:sz w:val="24"/><w:sz-cs w:val="24"/></w:rPr><w:t>&lt;Stellwerksübersicht&gt;</w:t></w:r></w:p><w:p><w:pPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Helvetica" w:h-ansi="Helvetica" w:cs="Helvetica"/><wx:font wx:val="Helvetica"/><w:sz w:val="24"/><w:sz-cs w:val="24"/></w:rPr><w:t></w:t><w:tab/><w:t>&lt;Bundesland name=„Wien“&gt;</w:t></w:r></w:p><w:p><w:pPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Helvetica" w:h-ansi="Helvetica" w:cs="Helvetica"/><wx:font wx:val="Helvetica"/><w:sz w:val="24"/><w:sz-cs w:val="24"/></w:rPr><w:t></w:t><w:tab/><w:t></w:t><w:tab/><w:t>&lt;Stellwerk id=„1“ name=„Wien Franz Josef Bahnhof“ nachbar=“2“&gt;</w:t></w:r></w:p><w:p><w:pPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Helvetica" w:h-ansi="Helvetica" w:cs="Helvetica"/><wx:font wx:val="Helvetica"/><w:sz w:val="24"/><w:sz-cs w:val="24"/></w:rPr><w:t></w:t><w:tab/><w:t></w:t><w:tab/><w:t>&lt;Stellwerk id=„2“ name=„Wien Heiligenstadt“ nachbar=„1“&gt;</w:t></w:r></w:p><w:p><w:pPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Helvetica" w:h-ansi="Helvetica" w:cs="Helvetica"/><wx:font wx:val="Helvetica"/><w:sz w:val="24"/><w:sz-cs w:val="24"/></w:rPr><w:t></w:t><w:tab/><w:t>&lt;/Bundesland&gt;</w:t></w:r></w:p><w:p><w:pPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Helvetica" w:h-ansi="Helvetica" w:cs="Helvetica"/><wx:font wx:val="Helvetica"/><w:sz w:val="24"/><w:sz-cs w:val="24"/></w:rPr><w:t>&lt;/Stellwerksübersicht&gt;</w:t></w:r></w:p><w:sectPr><w:pgSz w:w="11900" w:h="16840"/><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440"/></w:sectPr></wx:sect></w:body></w:wordDocument>
+<?xml version="1.0" encoding="UTF-8"?>
+<Stellwerksübersicht>
+   <region id="R1" name="Wien">
+      <stellwerk id="1" name="Wien Hauptbahnhof" nachbarn="" posX="700" posY="500" />
+      <stellwerk id="2" name="Wien Meidling" nachbarn="" posX="400" posY="500" />
+      <stellwerk id="3" name="Wien Liesing" nachbarn="" posX="200" posY="500" />
+      <stellwerk id="4" name="Wien Nord" nachbarn="" posX="00" posY="300" />
+      <stellwerk id="5" name="Wien Floridsdorf" nachbarn="" posX="800" posY="100" />
+      <stellwerk id="6" name="Wien Süßenbrunn" nachbarn="" posX="900" posY="0" />
+      <stellwerk id="7" name="Wien ZVB Kledering" nachbarn="" posX="700" posY="600" />
+      <stellwerk id="8" name="Wien Simmering" nachbarn="" posX="910" posY="300" />
+      <stellwerk id="10" name="Wien Hütteldorf" nachbarn="" posX="50" posY="300" />
+      <stellwerk id="11" name="Wien Westbahnhof" nachbarn="" posX="250" posY="300" />
+      <stellwerk id="12" name="Wien Erzherzog Karl Straße" nachbarn="" posX="910" posY="190" />
+      <stellwerk id="13" name="Wien Franz Josef Bahnhof" nachbarn="" posX="500" posY="300" />
+      <stellwerk id="14" name="Wien Heiligenstadt" nachbarn="" posX="500" posY="100" />
+   </region>
+</Stellwerksübersicht>
