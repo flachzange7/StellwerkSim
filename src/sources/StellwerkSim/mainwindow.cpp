@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "../Painting/stellwerk.h"
+#include "../Daten/stellwerksuebersicht.h"
 
 #include <QtWidgets/QGraphicsScene>
 #include <QtWidgets/QGraphicsView>
@@ -11,7 +12,15 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     setupUi(this);
-    QGraphicsView *stellwerkuebersicht = new QGraphicsView();
+    StellwerksUebersicht *uebersicht = new StellwerksUebersicht();
+
+//#ifdef __APPLE_CC__
+    uebersicht->ladeUebersicht("../../../../data/Stellwerksuebersicht.xml");
+//#else
+//    uebersicht->ladeUebersicht("../data/Stellwerksuebersicht.xml");
+//#endif
+
+    /*QGraphicsView *stellwerkuebersicht = new QGraphicsView();
 
     QGraphicsScene *scene = new QGraphicsScene();
     scene->setSceneRect(0, 0, size().width(), size().height());
@@ -47,7 +56,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     scene->addItem(heiligenstadt);
 
     stellwerkuebersicht->setScene(scene);
-    setCentralWidget(stellwerkuebersicht);
+    setCentralWidget(stellwerkuebersicht);*/
 
 
     //initialisiereAlles();

@@ -1,21 +1,65 @@
 #include "stellwerksuebersichtsmodel.h"
 
-StellwerksUebersichtsmodel::StellwerksUebersichtsmodel()
+#include <QFile>
+#include <QDomDocument>
+#include <QDebug>
+
+StellwerksUebersichtsModel::StellwerksUebersichtsModel()
 {
-    m_root = new StellwerksUebersichtsItem();
+    //m_root = new StellwerksUebersichtsItem();
 }
 
-StellwerksUebersichtsmodel::~StellwerksUebersichtsmodel()
+StellwerksUebersichtsModel::~StellwerksUebersichtsModel()
 {
 
 }
 
-void StellwerksUebersichtsmodel::addStellwerksUebersichtsItem(StellwerksUebersichtsItem *item)
+/*void StellwerksUebersichtsModel::addStellwerksUebersichtsItem(StellwerksUebersichtsItem *item)
 {
 
+}*/
+
+bool StellwerksUebersichtsModel::ladeUebersicht(const QString &filename)
+{
+    QFile file(filename);
+    QDomDocument doc;
+
+    if(!file.open(QIODevice::ReadOnly))
+    {
+        //emit error(ErrorFile, "Dateizugriffsfehler beim Laden von \""  + path + "\", prüfen Sie die Zugriffsberechtigung!");
+        qDebug() << "StellwerksUebersichtsModel::ladeUebersicht(): can't open file, check permissions!";
+        return false;
+    }
+
+    if(!doc.setContent(&file))
+    {
+        //emit error(ErrorXml, "Ungültiges Dateiformat von \""  + path + "\": XML Syntaxfehler!");
+        qDebug() << "StellwerksUebersichtsModel::ladeUebersciht(): can't set DOM content, check XML syntax!";
+        file.close();
+        return false;
+    }
+    file.close();
+
+    QDomElement root = doc.documentElement();
+    if(root.nodeName() != "Stellwerksübersicht")
+    {
+        //emit error(ErrorFormat, "Ungültiges Dateiformat von \""  + path + "\": Fehler im XML-Aufbau!");
+        qDebug() << "Root element not called Stellwerksübersicht";
+        return false;
+    }
+    QDomNode node = root.firstChild();
+    while(!node.isNull())
+    {
+        if(node.nodeName() == "region")
+        {
+            qDebug() << "Found Region: ";
+        }
+        node = node.nextSibling();
+    }
+    return true;
 }
 
-
+/*
 StellwerksUebersichtsItem::StellwerksUebersichtsItem(QString name) : m_name(name)
 {
 
@@ -38,4 +82,4 @@ void StellwerksUebersichtsItem::paint(QPainter *painter, const QStyleOptionGraph
 
     painter->drawRect(10, 10, 100, 60);
     painter->drawText(QRectF(15, 15, 100, 60), m_name);
-}
+}*/

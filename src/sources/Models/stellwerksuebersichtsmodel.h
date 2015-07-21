@@ -6,21 +6,23 @@
 #include <QList>
 
 
-class StellwerksUebersichtsmodel : public QGraphicsScene
+class StellwerksUebersichtsModel : public QGraphicsScene
 {
     public:
-        StellwerksUebersichtsmodel();
-        ~StellwerksUebersichtsmodel();
+        StellwerksUebersichtsModel();
+        ~StellwerksUebersichtsModel();
 
-        void addStellwerksUebersichtsItem(StellwerksUebersichtsItem *item);
+       // void addStellwerksUebersichtsItem(StellwerksUebersichtsItem *item);
         void berechneVerbindungen();
 
+        bool ladeUebersicht(const QString &filename);
+
     private:
-        StellwerksUebersichtsItem *m_root;
+       // StellwerksUebersichtsItem *m_root;
 
 };
 
-class StellwerksUebersichtsItem : public QGraphicsItem
+/*class StellwerksUebersichtsItem : public QGraphicsItem
 {
     public:
         StellwerksUebersichtsItem(QString name);
@@ -32,6 +34,6 @@ class StellwerksUebersichtsItem : public QGraphicsItem
     private:
         QString m_name;
         QList<StellwerksUebersichtsItem *> m_nachbar;
-};
+};*/
 
 #endif // STELLWERKSUEBERSICHTSMODEL_H
