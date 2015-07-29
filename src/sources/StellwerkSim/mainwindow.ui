@@ -10,46 +10,14 @@
     <height>683</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>MainWindow</string>
+  <property name="styleSheet">
+   <string notr="true">#MainWindow
+{
+	border-image: url(:/Allgemein/Titelbild);
+}</string>
   </property>
-  <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
-     <number>0</number>
-    </property>
-   </layout>
-  </widget>
+  <widget class="QWidget" name="centralWidget"/>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="action_ersatzsignal">
-   <property name="text">
-    <string>Ersatzsignal</string>
-   </property>
-  </action>
-  <action name="action_bahnubergang">
-   <property name="text">
-    <string>Bahnübergang</string>
-   </property>
-  </action>
-  <action name="action_Speicher_loeschen">
-   <property name="text">
-    <string>Speicher löschen</string>
-   </property>
-  </action>
-  <action name="action_Fahrstrasse_loeschen">
-   <property name="text">
-    <string>Fahrstraße löschen</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Stellwerksübersicht>
    <region id="R1" name="Wien">
-      <stellwerk id="1" name="Wien Hauptbahnhof" nachbarn="" posX="700" posY="500" />
-      <stellwerk id="2" name="Wien Meidling" nachbarn="" posX="400" posY="500" />
-      <stellwerk id="3" name="Wien Liesing" nachbarn="" posX="200" posY="500" />
+      <stellwerk id="1" name="Wien Hauptbahnhof" nachbarn="2,4" posX="700" posY="500" />
+      <stellwerk id="2" name="Wien Meidling" nachbarn="1,3,10" posX="400" posY="500" />
+      <stellwerk id="3" name="Wien Liesing" nachbarn="2" posX="200" posY="500" />
       <stellwerk id="4" name="Wien Nord" nachbarn="" posX="00" posY="300" />
       <stellwerk id="5" name="Wien Floridsdorf" nachbarn="" posX="800" posY="100" />
       <stellwerk id="6" name="Wien Süßenbrunn" nachbarn="" posX="900" posY="0" />
@@ -14,5 +14,8 @@
       <stellwerk id="12" name="Wien Erzherzog Karl Straße" nachbarn="" posX="910" posY="190" />
       <stellwerk id="13" name="Wien Franz Josef Bahnhof" nachbarn="" posX="500" posY="300" />
       <stellwerk id="14" name="Wien Heiligenstadt" nachbarn="" posX="500" posY="100" />
+   </region>
+   <region id="R2" name="Niederösterreich">
+      <stellwerk id="15" name="Mödling" nachbarn="" posX="" posY="" />
    </region>
 </Stellwerksübersicht>

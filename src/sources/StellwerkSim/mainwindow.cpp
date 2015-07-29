@@ -12,10 +12,24 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     setupUi(this);
-    StellwerksUebersicht *uebersicht = new StellwerksUebersicht();
 
-//#ifdef __APPLE_CC__
-    uebersicht->ladeUebersicht("../../../../data/Stellwerksuebersicht.xml");
+    initialisiereAlles();
+
+    /* INITIALISIERE HAUPTMENU */
+    _hauptmenue = new Hauptmenue();
+    this->setCentralWidget(_hauptmenue);
+
+    connect(_hauptmenue, SIGNAL(aktionEinzelspieler()), this, SLOT(starteEinzelspieler()));
+    connect(_hauptmenue, SIGNAL(aktionBeenden()), this, SLOT(close()));
+
+
+    //StellwerksUebersicht *uebersicht = new StellwerksUebersicht();
+
+    //uebersicht->ladeUebersicht("../../../../data/Stellwerksuebersicht.xml");
+
+
+
+
 //#else
 //    uebersicht->ladeUebersicht("../data/Stellwerksuebersicht.xml");
 //#endif
@@ -97,6 +111,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::initialisiereAlles()
 {
+    setzeApplikationsName();
+    setWindowTitle();
+    initSidebar();
+
+    _uebersicht = NULL;
+    _aktuellesStellwerk = NULL;
+
+    _stellwerksWidget = NULL;
+    _hauptmenue = NULL;
+    _stellwerksauswahl = NULL;
+
     /* Fahrplan
     QGraphicsScene *fahrplanScene = new QGraphicsScene();
     fahrplanScene->setSceneRect(QRectF(0, 0, 230, 900));
@@ -106,4 +131,54 @@ void MainWindow::initialisiereAlles()
     fahrplanScene->addItem(fahrplan);
 */
 
+}
+
+void MainWindow::initAktionen()
+{
+    //connect(button_beenden, SIGNAL(clicked()), SLOT(close()));
+}
+
+void MainWindow::setzeApplikationsName()
+{
+    QCoreApplication::setApplicationName("MultiSimulator");
+    QCoreApplication::setApplicationVersion("0.0.0.1");
+    QCoreApplication::setOrganizationName("Flachzange-Sobeat-Software");
+
+    // setze Allgemeine Daten für AboutMe!
+}
+
+void MainWindow::setWindowTitle()
+{
+    QString title = QCoreApplication::organizationName() + " " + QCoreApplication::applicationName() + " " + QCoreApplication::organizationDomain() + " - Stellwerk Simulator - " + QCoreApplication::applicationVersion();
+    /*if(Project::name() != QString())
+    {
+        title += " - " + Project::name();
+    }*/
+    QMainWindow::setWindowTitle(title);
+}
+
+void MainWindow::loescheAlles()
+{
+    if(_hauptmenue != NULL)
+    {
+        disconnect(_hauptmenue, SIGNAL(aktionEinzelspieler()), this, SLOT(starteEinzelspieler()));
+        disconnect(_hauptmenue, SIGNAL(aktionBeenden()), this, SLOT(close()));
+
+        delete _hauptmenue;
+        _hauptmenue = NULL;
+        setStyleSheet("");
+    }
+}
+
+void MainWindow::initSidebar()
+{
+    //_stellwerksWidget = new StellwerksUebersichtSidebarWidget();
+    //sidebar->setWidget(_stellwerksWidget);
+}
+
+void MainWindow::starteEinzelspieler()
+{
+    loescheAlles();
+    _stellwerksauswahl = new StellwerksUebersichtWidget();
+    setCentralWidget(_stellwerksauswahl);
 }
